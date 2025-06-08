@@ -1,5 +1,6 @@
-//Write a function translate() that will translate a text i.e, double every consonant and place an occurrence of "o" in between.
-//For example, translate("this is fun") should return the string "tothohisos isos fofunon".
+//Write a java script program to convert month number to month name using closures.
+//If the user enters a number less than 1 or greater than 12 or a non-number, have the function write "Bad Number" in the monthName field.
+//If the user enters a decimal between 1 and 12 (inclusive), strip the decimal portion of the number.
 
 const getMonthNameConverter = () => {
   const monthNames = [
