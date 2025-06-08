@@ -1,0 +1,46 @@
+<!-- Create a web page with the following characteristics using BOX Model
+hl's have 1px red solid borders, background color #D18C1D, and 10px of space between the content and the border (padding)
+List items have 15px extra space around them (margin) and background color #C0A9DB
+Paragraphs are contained in 600px by 400px boxes with 2px black dotted borders and background color #D1D631 -->
+
+<html>
+<head>
+    <title>Box Model Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <p>This is a paragraph inside a box with specified dimensions.</p>
+
+</body>
+</html>
+
+
+<!--styles.css:--->
+h1, h2 {                          /* Style for h1 and h2 tags */
+    border: 1px solid red;
+    background-color: #D18C1D;
+    padding: 10px;
+}
+                                  /* Style for list items */
+li {
+    margin: 15px;
+    background-color: #C0A9DB;
+}
+                                  /* Style for paragraphs */
+p {
+    width: 600px;
+    height: 400px;
+    border: 2px dotted black;
+    background-color: #D1D631;
+}
+
