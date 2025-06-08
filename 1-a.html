@@ -1,0 +1,29 @@
+<!--Write a function translate() that will translate a text i.e, double every consonant and place an occurrence of "o" in between. 
+For example, translate("this is fun") should return the string "tothohisos isos fofunon".-->
+
+<html lang="en">
+  <body>
+    <input type="text" placeholder="Enter text" id="rov" />
+    <button onclick="translateTxt()">Translate</button>
+    <p id="result"></p>
+
+    <script>
+      function translateTxt() {
+        var str = document.getElementById("rov").value.toLowerCase();
+        let res = "";
+        for (let i = 0; i < str.length; i++) {
+
+          if ("aeiou ".includes(str[i])) {
+            res += str[i];
+          } 
+          else {
+            res += str[i] + "o" + str[i];
+          }
+        }
+
+        document.getElementById("result").innerHTML = res;
+      }
+    </script>
+
+  </body>
+</html>
