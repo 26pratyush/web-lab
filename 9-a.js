@@ -4,11 +4,6 @@
 var express = require("express");
 var app = express();
 
-app.use((req, res, next) => {
-    res.setHeader("Content-Type", "text/html");
-    next();
-});
-
 app.get("/", (req, res) => {
     res.send("<h1>Welcome to Home Page</h1>");
 });
