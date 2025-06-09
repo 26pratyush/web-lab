@@ -27,3 +27,30 @@ For example, translate("this is fun") should return the string "tothohisos isos 
 
   </body>
 </html>
+
+<!-- pure .js -->
+<script>
+  
+</script>
+function translate(text) 
+{
+  var str = text.toLowerCase();
+  let res = "";
+  var i;
+
+  for (i = 0; i < str.length; i++) 
+    {
+    if ("aeiou ".includes(str[i])) {
+      res += str[i];
+    } 
+    else {
+      res += str[i] + "o" + str[i];
+    }
+  }
+
+  return res;
+}
+
+const translated = translate("Hello World");
+console.log(translated); 
+
