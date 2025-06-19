@@ -29,3 +29,39 @@ pluralize("dog", 5);
 pluralize("car", 0);
 pluralize("geese",4);
 pluralize("sheep",3);
+
+//HTML Code:
+<html>
+    <head>
+        <title>Pluralize</title>
+    </head>
+    <body>
+        <h2>Pluralize Function</h2>
+        <input type="text" id="noun" placeholder="Enter the Noun"><br><br>
+        <input type="text" id="num" placeholder="Enter the Number"><br><br>
+        <button onclick="pluralize()">Click to Get Plural</button><br><br>
+        <p id="res"></p>
+
+        <script>
+        function pluralize() {
+            const word = document.getElementById("noun").value;
+            const num = parseInt(document.getElementById("num").value);
+
+            if (num === 1) {
+            document.getElementById("res").innerHTML = `${num} ${word}`;
+            } 
+            else {
+                if (word === "sheep") {
+                    document.getElementById("res").innerHTML = `${num} sheep`;
+                } 
+                else if (word === "goose") {
+                    document.getElementById("res").innerHTML = `${num} geese`;
+                } 
+                else {
+                    document.getElementById("res").innerHTML = `${num} ${word}s`;
+                }
+            }
+        }
+        </script>
+    </body>
+</html>
