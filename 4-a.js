@@ -1,28 +1,29 @@
 //Write a REACT program to print Name, Address and Company of an Employee. 
 //When you Click on CHANGE button, the name and address should be changed.
 
-import React, { useState } from 'react';
+import react, {useState} from "react";
 
-function EmployeeInfo() {
-  const [employee, setEmployee] = useState({
-    name: "John Doe",
-    address: "123 Main Street",
-    company: "TechCorp"
+function EmployeeInfo(){
+  const [employee, setEmployee]= useState({
+    name: "Pratyush Pai",
+    address:"MSRIT Gate 10",
+    company:"CSE"
   });
 
-  return (
-    <div>
-      <p><strong>Name:</strong> {employee.name}</p>
-      <p><strong>Address:</strong> {employee.address}</p>
-      <p><strong>Company:</strong> {employee.company}</p>
-      <button onClick={() => setEmployee({ ...employee, name: "Jane Smith", address: "456 Park Avenue" })}>
-        CHANGE
-      </button>
-    </div>
-  );
+return(
+  <h3>Name: {employee.name}<br/>
+  Address: {employee.address}<br/>
+  Company: {employee.company}<br></br>
+  <button onClick={() => setEmployee({
+    ...employee, name:"Percy", address:"MSR North City", company:"AIML"})}>
+    CHANGE
+  </button>
+  </h3>
+);
 }
 
 export default EmployeeInfo;
+
 
 //npx create-react-app employee-info
 //cd employee-info
