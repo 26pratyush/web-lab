@@ -1,16 +1,35 @@
-//Write a javascript closure to calculate net price of a product along with tax.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Month Display</title>
+</head>
+<body>
+  <h2>Month Converter</h2>
 
-function createCalc(tax) 
-{
-  return function(price) 
-  {
-    return price + (price * tax);
-  }
-}
+  <input type="text" placeholder="Enter a number" id="monthnum" required>
+  <button onclick="monthConverter()">Click to Convert</button>
 
-const gstCalc = createCalc(0.18); 
-console.log(gstCalc(1000)); 
+  <p id="res"></p>
 
-// createTaxCalculator is a closure that takes a tax rate (like 0.18 for 18%).
+  <script>
+    function monthConverter() {
+      const names = ["January", "February", "March", "April", "May", "June",
+                     "July", "August", "September", "October", "November", "December"];
 
-// It returns another function that, when called with a price, calculates the net price including tax.
+      // Closure function that accesses `names`
+      const convert = function(month) {
+        const num = parseInt(month, 10);
+        if (num >= 1 && num <= 12) {
+          return names[num - 1];
+        } else {
+          return "Bad Number";
+        }
+      };
+
+      const input = document.getElementById("monthnum").value;
+      const result = convert(input);
+      document.getElementById("res").innerHTML = result;
+    }
+  </script>
+</body>
+</html>
