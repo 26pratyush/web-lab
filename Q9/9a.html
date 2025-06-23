@@ -1,0 +1,35 @@
+<!--Write a JavaScript function called notBad that takes a single argument, a string.
+It should find the first appearance of the substring 'not' and 'bad'.
+If the 'bad' follows the 'not', then it should replace the whole 'not'...'bad' substring with 'good' and return the result.
+If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.-->
+
+<html>
+    <head>
+        <title>Not Bad</title>
+    </head>
+    <body>
+        <h2>notBad Function</h2>
+
+        <input type="text" id="word" placeholder="Enter Sentence"><br><br>
+        <button onclick="notBad()">Submit</button>
+        <p id="res"></p>
+
+        <script>
+            function notBad(){
+                const str=document.getElementById("word").value.toLowerCase();
+                const notIndex=str.indexOf("not");
+                const badIndex=str.indexOf("bad");
+
+                let result=str;                        //say let result=str, dont define result as a const!!
+                
+                if(notIndex!=-1 && badIndex!=-1 && notIndex<badIndex){
+                    const beforeNot=str.slice(0,notIndex);
+                    const afterBad=str.slice(badIndex+3);
+                    result=beforeNot+"good"+afterBad;
+                }
+
+                document.getElementById("res").innerText=result;
+            }
+        </script>
+    </body>
+</html>
