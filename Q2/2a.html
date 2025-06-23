@@ -1,0 +1,38 @@
+<!--Write a java script program to convert month number to month name using closures.
+If the user enters a number less than 1 or greater than 12 or a non-number, have the function write "Bad Number" in the monthName field.
+If the user enters a decimal between 1 and 12 (inclusive), strip the decimal portion of the number.-->
+
+<html>
+    <head>
+        <title>Months</title>
+    </head>
+    <body>
+        <h2>Month Converter</h2>
+        <input type="text" id="monthnum" placeholder="Enter Number">
+        <button onclick="monthConverter()">Click to Get Month</button>
+        <p id="res"></p>
+
+        <script>
+            function monthConverter(){
+                const names=["January", "February", "March", "April", "May", "June",
+                     "July", "August", "September", "October", "November", "December"];
+                
+                const convert=function(month){
+                    const num=parseInt(month);
+                    
+                    if(num>=1 && num<=12){
+                        return names[num-1];
+                    }
+                    else{
+                        return "Bad Number";
+                    }
+                } 
+                const input=document.getElementById("monthnum").value;
+                const result=convert(input);
+                document.getElementById("res").innerText=result;
+            }
+        </script>
+    </body>
+</html>
+
+    
