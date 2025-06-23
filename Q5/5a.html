@@ -1,0 +1,39 @@
+<!--Write a java script function named pluralize that:
+takes 2 arguments, a noun and a number.
+returns the number and pluralized form, like "5 cats" or "1 dog".
+Make it handle a few collective nouns like "sheep" and "geese".-->
+
+<html>
+    <head>
+        <title>Pluralize</title>
+    </head>
+    <body>
+        <h2>Pluralize Function</h2>
+        <input type="text" id="num" placeholder="Enter Number"><br><br>
+        <input type="text" id="noun" placeholder="Enter Noun"><br><br>
+        <button onclick="pluralize()">Submit</button><br>
+        <p id="res"></p>
+
+        <script>
+            function pluralize(){
+                const noun=document.getElementById("noun").value;
+                const num=parseInt(document.getElementById("num").value);
+
+                if(num===1){
+                    document.getElementById("res").innerHTML=`${num} ${noun}`;      //always use ===
+                }
+                else{
+                    if(noun==="sheep"){                                              // ===
+                        document.getElementById("res").innerHTML=`${num} ${noun}`;
+                    }
+                    else if(noun==="goose"){
+                        document.getElementById("res").innerHTML=`${num} geese`;
+                    }
+                    else{
+                        document.getElementById("res").innerHTML=`${num} ${noun}s`;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
