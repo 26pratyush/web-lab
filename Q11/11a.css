@@ -1,0 +1,19 @@
+h1{                                  /* just call the element */
+    border: 1px solid;
+    border-color: red;
+    background-color: #D18C1D;
+    padding: 10px;
+}
+
+li{
+    margin: 15px;
+    background-color:#C0A9DB;
+}
+
+p{
+    border: 2px dotted;
+    border-color: black;
+    background-color: #D1D631;
+    width: 600px;
+    height: 400px;
+}
