@@ -1,0 +1,35 @@
+<!--Write a REACT program which accepts the Name from the form. 
+As you type, it updates the Name in the page with an hl tag.-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">                                       <!--Important-->
+        <title>Name Display</title>
+        <script src="react/react.development.js"></script>           <!--Important-->
+        <script src="react/react-dom.development.js"></script>
+        <script src="react/babel.min.js"></script>
+    </head>
+  
+    <body>
+    <div id="root"></div>
+    
+    <script type="text/babel">                                       //Important
+        function NameForm(){
+            const [name, setname]=React.useState();
+
+            const handleChange= (event) => {
+                setname(event.target.value);
+            };
+
+            return (
+                <div>
+                    <h2>Enter your name:</h2>
+                    <input type="text" placeholder="Enter name here" value={name} onChange={handleChange}/>
+                    <h1>{name}</h1>
+                </div>
+            );
+        }
+        ReactDOM.render(<NameForm/>,document.getElementById("root"))          //Important
+    </script>
+    </body>
+</html>
