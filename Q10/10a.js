@@ -1,6 +1,6 @@
 //Write a node.js Express program to create a custom middleware functions for
 //i. Logger
-//ii. No. of time the visitor visited the website (Not Done)
+//ii. No. of time the visitor visited the website
 
 const express = require('express');
 const app = express();
