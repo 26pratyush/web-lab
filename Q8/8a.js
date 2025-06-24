@@ -2,24 +2,24 @@
 //(Hint: run the program through npm start)
 //For ex- Input vowelCount('Le Tour de France') Output: a, e, i, o, and u appear, respectively, 1, 3, 0, 1, 1 times
 
-function vowelCount(str) {
-  const vowels = 'aeiou';
-  const count = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+function vowelCount(input) {
+  const vowels = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+  const str = input.toLowerCase();
 
-  for (let char of str.toLowerCase()) {
-    if (vowels.includes(char)) {
-      count[char]++;
+  for (let char of str) {
+    if ('aeiou'.includes(char)) {
+      vowels[char]++;
     }
   }
 
-  console.log(`${str}`);
-  console.log(`a, e, i, o, and u appear, respectively, ${count.a}, ${count.e}, ${count.i}, ${count.o}, ${count.u} times`);
+  console.log(`a, e, i, o, and u appear, respectively, ${vowels.a}, ${vowels.e}, ${vowels.i}, ${vowels.o}, ${vowels.u} times`);
 }
 
-vowelCount('Le Tour de France');
+vowelCount('Hello World');
 
-mkdir vowelcount
-cd vowelcount
+
+mkdir vowels
+cd vowels
 npm init -y
 go to package.json and add inside scripts:
 "start": "node vowelCount.js"
