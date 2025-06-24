@@ -1,5 +1,8 @@
 //Write a java script program to implement Stack and Queue using modules.
 
+// 1st Option: npm init -y and in package.json add "type":"module"
+//2nd Option: rename all files to .mjs including the imports in main.mjs
+
 1. main.js
 import {Stack} from './stack1.js';
 import { Queue } from './queue1.js';
