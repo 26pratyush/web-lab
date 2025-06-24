@@ -8,17 +8,17 @@ For example, translate("this is fun") should return the string "tothohisos isos 
     <body>
         <h2>Translate Function</h2>
         <input type="text" id="text" placeholder="Enter Sentence"><br><br>
-        <button onclick="translatetxt()">Click to Translate</button><br><br>
+        <button onclick="translatetxt()">Click to Translate</button><br><br>    <!-- dont call it translate()-->
         <p id="res"></p>
 
         <script>
             function translatetxt(){
                 
-            var str=document.getElementById("text").value.toLowerCase();    //str is a var
-            let res="";  
-                                                                            //let res
+            const str=document.getElementById("text").value.toLowerCase();    
+            let res="";                                                     //let res
+                                                                            
             for(let i=0;i<str.length;i++){                                  //let i=0
-                if('aeiou'.includes(str[i])){                               //'aeiou'.includes(str[i])
+                if('aeiou '.includes(str[i])){                               //put space after "aeiou "   
                     res=res+str[i];
                 }
                 else{
