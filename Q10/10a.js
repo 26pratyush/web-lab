@@ -2,23 +2,22 @@
 //i. Logger
 //ii. No. of time the visitor visited the website
 
-const express = require('express');
-const app = express();
+const express=require('express');
+const app=express();
 
-let visitCount = 0;
+let count=0;
 
-app.get('/', (req, res) => {
-  visitCount++; // increase count
-  
-  console.log('LOGGED');
-  console.log(`${new Date().toLocaleString()} - ${req.method} ${req.url}`);
+app.get('/', (req,res) =>{
+    count++;
+    console.log("LOGGED");
+    console.log(`${new Date()} -${req.method}-${req.url}`);      //remember
 
-  res.send(`
-    <h2>Hello User!</h2>
-    <p>You are visitor number: <strong>${visitCount}</strong></p>
-  `);
+res.send(`
+    <h2>Hello User</h2>
+    <p>You are visitor number ${count}
+`);
 });
 
-app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000');
-});
+app.listen(3000, ()=>{
+    console.log("Server running on 3000");
+})
