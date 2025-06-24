@@ -3,49 +3,49 @@
   Use closures to keep CIE and SEE marks private. write a method to compute and return the total marks. 
   Display student details with total.-->
 
-<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Marks</title>
-</head>
+    <head>
+        <title>Marks</title>
+    </head>
+    <body>
+        <h2>Student Academic Entry</h2>
+        USN: <input type="text" id="usn"><br>
+        Subject Code: <input type="text" id="scode"><br>
+        Subject Name: <input type="text" id="sname"><br>
+        CIE Marks: <input type="number" id="cie"><br>
+        SEE Marks: <input type="number" id="see"><br><br>
+        <button onclick="createStudent()">Submit</button>
+        <h3>Result:</h3>
+        <div id="res"></div>
 
-<body>
-  <h2>Marks Entry</h2>
-  USN: <input type="text" id="usn"><br><br>
-  Sub Code: <input type="text" id="scode"><br><br>
-  Sub Name: <input type="text" id="sname"><br><br>
-  CIE: <input type="text" id="cie"><br><br>
-  SEE: <input type="text" id="see"><br><br>
-  <button onclick="createStudent()">Submit</button><br><br>
-  <div id="res"></div>
+        <script>
+            function calculate(usn, scode, sname, cie, see)               //outer fn
+            {
+                return{
+                    getDetails(){                                         //inner fn
+                        return{
+                            usn, scode, sname, total: cie+see
+                        };
+                    }
+                };
+            }
 
-  <script>
-    function calculate(usn, scode, sname, cie, see) {   // outer function
+            function createStudent(){
+                const usn = document.getElementById("usn").value;
+                const scode = document.getElementById("scode").value;
+                const sname = document.getElementById("sname").value;
+                const cie = parseInt(document.getElementById("cie").value);
+                const see = parseInt(document.getElementById("see").value);
 
-      return { getTotal()                               // inner function
-        {
-          return {usn,scode,sname,total:cie + see };
-        }
-      };
-    }
+                const student=calculate(usn, scode, sname, cie, see);
+                const details=student.getDetails()
 
-    function createStudent() {
-      const usn = document.getElementById("usn").value;
-      const scode = document.getElementById("scode").value;
-      const sname = document.getElementById("sname").value;
-      const cie = parseInt(document.getElementById("cie").value);
-      const see = parseInt(document.getElementById("see").value);
-
-      const result = calculate(usn, scode, sname, cie, see);
-      const details = result.getTotal();
-
-    document.getElementById("res").innerHTML = `
-    <h3>USN: ${details.usn}</h3>
-    <h3>Sub Code: ${details.scode} Name: ${details.sname}</h3>
-    <h3>Total: ${details.total}</h3>
-    `;
-    }
-  </script>
-</body>
+                document.getElementById("res").innerHTML=`
+                <h3>USN: ${details.usn}</h3>
+                <h3>Sub Code: ${details.scode} Name: ${details.sname}</h3>
+                <h3>Total Marks: ${details.total}</h3>
+                `;
+            }
+        </script>
+    </body>
 </html>
