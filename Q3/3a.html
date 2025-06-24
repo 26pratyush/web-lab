@@ -3,49 +3,48 @@
   Use closures to keep CIE and SEE marks private. write a method to compute and return the total marks. 
   Display student details with total.-->
 
+<!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8" />
   <title>Marks</title>
 </head>
 <body>
-  <h2>Student Marks Entry</h2>
-
-  USN: <input type="text" id="usn"><br>
-  Subject Code: <input type="text" id="subCode"><br>
-  Subject Name: <input type="text" id="subName"><br>
-  CIE Marks: <input type="number" id="cie"><br>
-  SEE Marks: <input type="number" id="see"><br><br>
-  <button onclick="calculate()">Submit</button>
-
-  <h3>Final Result:</h3>
-  <div id="result"></div>
+  <h2>Marks Entry</h2>
+  USN: <input type="text" id="usn"><br><br>
+  Sub Code: <input type="text" id="scode"><br><br>
+  Sub Name: <input type="text" id="sname"><br><br>
+  CIE: <input type="text" id="cie"><br><br>
+  SEE: <input type="text" id="see"><br><br>
+  <button onclick="createStudent()">Submit</button><br><br>
+  <div id="res"></div>
 
   <script>
-    function calculate() {
+    function calculate(usn, scode, sname, cie, see) {
+      // cie and see are private here
+      return { getDetails() 
+        {
+          return {usn,scode,sname,total: cie + see };
+        }
+      };
+    }
+
+    function createStudent() {
       const usn = document.getElementById("usn").value;
-      const subCode = document.getElementById("subCode").value;
-      const subName = document.getElementById("subName").value;
+      const scode = document.getElementById("scode").value;
+      const sname = document.getElementById("sname").value;
       const cie = parseInt(document.getElementById("cie").value);
       const see = parseInt(document.getElementById("see").value);
 
-      function getStudentDetails() {          // Inner function to maintain closure and keep CIE/SEE private
-        return {
-          usn,
-          subjectCode: subCode,
-          subjectName: subName,
-          totalMarks: cie + see
-        };
-      }
+      const student = calculate(usn, scode, sname, cie, see);
+      const details = student.getDetails();
 
-      const details = getStudentDetails();
-
-      document.getElementById("result").innerHTML = `
-        <h3>USN: ${details.usn}</h3><br>
-        <h3>Subject: ${details.subjectCode} - ${details.subjectName}</h3><br>
-        <h3>Total Marks: ${details.totalMarks}</h3>
-      `;
+    document.getElementById("res").innerHTML = `
+    <h3>USN: ${details.usn}</h3>
+    <h3>Sub Code: ${details.scode} Name: ${details.sname}</h3>
+    <h3>Total: ${details.total}</h3>
+    `;
     }
   </script>
 </body>
 </html>
-
