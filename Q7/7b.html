@@ -1,0 +1,40 @@
+<html>
+        <head>
+                <title>Internship</title>
+        </head>
+        <body>
+                <h2>Internship Details</h2>
+                <form action="/submit" method="post">
+                        ID:<input type="text" name="id"><br><br>
+                        Name:<input type="text" name="name"><br><br>
+                        Course:<input type="text" name="course"><br><br>
+                        Duration:<input type="text" name="duration"><br><br>
+                        Status:<input type="text" name="istatus"><br><br>
+                        <button type="submit">Add Course</button><br><br>
+                </form>
+
+                <form action="/filter" method="get">
+                        <h2>Actively Enrolled Students</h2>
+                        <button type="submit">Get Students</button><br><br>
+                </form>
+
+                <h2>Update Enrollment Status</h2>
+                <h3>Update for student or course</h3>
+                ID:<input type="text" id="sid"><br><br>
+                Course:<input type="text" id="s_course"><br><br>
+                <button onclick="updateDetails()">Mark as Completed</button>
+                <script>
+                        async function updateDetails(){
+                                        const id=sid.value;
+                                        const course=s_course.value;
+                                        const res=await fetch('/update',{
+                                                        method:'PUT',
+                                                        headers:{'Content-Type':'application/json'},
+                                                        body:JSON.stringify({id, course})
+                                        });
+                                        const data=await res.json();
+                                        alert(data.message);
+                        }
+                </script>
+        </body>
+</html>
