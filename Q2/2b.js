@@ -38,7 +38,7 @@ app.post('/filter', async(req,res)=>{
         const db=client.db('2b');
         const collection=db.collection('students');
 
-        await collection.deleteMany({fee:{$lte:0}});
+        await collection.deleteMany({fee:{$lte:0}});        //Important!!
         const rich=await collection.find().toArray();
         await client.close();
 
