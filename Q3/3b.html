@@ -1,0 +1,21 @@
+<html>
+        <head>
+                <title>Employee</title>
+        </head>
+        <body>
+                <form action="/submit" method="post">
+                        Name:<input type="text" name="name"><br><br>
+                        E-mail:<input type="email" name="email"><br><br>
+                        Phone:<input type="tel" name="phone"><br><br>
+                        Date:<input type="date" name="date"><br><br>
+                        Job:<input type="text" name="job"><br><br>
+                        Salary:<input type="text" name="salary"><br><br>
+                        <button type="submit">Submit</button><br><br>
+                </form>
+
+                <form action="/filter" method="get">
+                        <h2>Get Employees with Salary > 50000</h2>
+                        <button type="submit">Filter</button>
+                </form>
+        </body>
+</html>        
