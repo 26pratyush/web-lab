@@ -1,0 +1,29 @@
+<!--3 Forms: post get post-->
+
+<html>
+        <head>
+                <title>HMS</title>
+        </head>
+        <body>
+                <h2>Hospital Details</h2>
+                <form action="/submit" method="post">
+                        ID:<input type="text" name="id"><br><br>
+                        Name:<input type="text" name="name"><br><br>
+                        Location:<input type="text" name="loc"><br><br>
+                        Total Beds:<input type="text" name="total"><br><br>
+                        Occupied Beds:<input type="text" name="occ"><br><br>
+                        <button type="submit">Add Hospital</button><br><br>
+                </form>
+
+                <form action="/filter" method="get">
+                        <h2>Available Beds < 10</h2>
+                        <button type="submit">Search</button><br><br>
+                </form>
+
+                <form action="/update" method="post">
+                        <h2>Admit Patient</h2>
+                        ID:<input type="text" name="id">
+                        <button type="submit">Admit</button>
+                </form>
+        </body>
+</html>
