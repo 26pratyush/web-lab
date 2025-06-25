@@ -1,0 +1,19 @@
+<html>
+        <head>
+                <title>Exams</title>
+        </head>
+        <body>
+                <h2>Student Exam Details</h2>
+                <form action="/submit" method="post">
+                        Name:<input type="text" name="name"><br><br>
+                        USN:<input type="text" name="usn"><br><br>
+                        Semester:<input type="text" name="sem"><br><br>
+                        Exam Fee:<input type="text" name="fee"><br><br>
+                        <button type="submit">Add Student</button><br><br>
+                </form>
+                <form action="/filter" method="post">
+                        <h2>Delete Students who haven't paid fees:</h2>
+                        <button type="submit">Delete</button>
+                </form>
+        </body>
+</html>
